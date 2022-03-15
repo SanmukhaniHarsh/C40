@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Last-Modified" content="Sun, 02 May 2021 12:28:31 +0100">
+    <title>MindCuber-RI for MINDSTORMS Robot Inventor</title>
+  </head>
+  <body>
+    <font face="Verdana">
+      <div>
+	<p><font style="background-color: #ae65cd" bgcolor="#AE65CD" color="#ffffff" size="7" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>MindCuber.com</strong>&nbsp;</font></p>
+      </div>
+      <span style="font-size:small;">
+	<a href="../index.html">Home</a>
+	<a href="../mindcuberri/mindcuberri.html">Robot Inventor</a>
+	<a href="../primecuber/primecuber.html">SPIKE</a>
+	<a href="../mindcub3r/mindcub3r.html">EV3</a>
+	<a href="../mindcuber/mindcuber.html">NXT 2.0</a>
+	<a href="../mindcuber8527/mindcuber8527.html">NXT 8527</a>
+      </span>
+      <p>
+	Build your own LEGO&reg; MINDSTORMS&reg Robot Inventor robot
+	to solve the Rubik's Cube&reg;...
+      </p>
+      <h1>How to build MindCuber-RI for LEGO MINDSTORMS Robot Inventor</h1>
+      <br></br>
+      <div style="line-height:130%;">
+	<div style="width:580px;float:left;">
+	  <iframe width="560" height="315" src="http://www.youtube.com/embed/oX5yYhgJG2s?rel=0" frameborder="0" allowfullscreen="1"></iframe>
+	</div>
+	<div style="width:580px;float:left;text-align:left;">
+	  Download instructions and software:
+	  <font size="2">(right click and "Save link as...")</font>
+	  <ul>
+	    <li>
+	      Building instructions v1p0 (set 51515):
+	      <a href="MindCuber-RI-v1p0.pdf">download</a>
+	      <br></br>
+	      <img src="mindcuberri.png" vspace="5"></img>
+	    </li>
+	    <li>
+	      MINDSTORMS Robot Inventor Program:
+	      <a href="mindcuberri.html#Software">see here</a>
+	    </li>
+	  </ul>
+	</div>
+      </div>
+      <div style="clear:both;line-height:130%;">
+	<br></br>
+	<h2>
+	  <span id="BuildInstructions">
+	    1. Description
+	  </span>
+	</h2>
+	<p>
+	  MindCuber-RI is a robot that can be built from a single LEGO
+	  MINDSTORMS Robot Inventor set (51515) to solve the well known Rubik's Cube puzzle.
+        </p>
+        <p>
+          MindCuber-RI software version v1p0 should work with any version of the
+	  LEGO MINDSTORMS Robot Inventor software. However, it is recommended that
+	  the MINDSTORMS Robot Inventor software is always updated to the latest version
+	  released by LEGO.
+        </p>
+        <p>
+	  Construct the robot by carefully following the
+	  <a href="MindCuber-RI-v1p0.pdf">build instructions</a>
+	  and then follow the instructions in the next section to
+	  <a href="mindcuberri.html#Software">download and install the software</a>
+	  described below.
+	</p>
+	<p>
+	  MindCuber-RI software consists of four projects. The second is
+	  optional and may be omitted or downloaded later:
+	  <ol>
+	    <li>
+	      <p>
+		A python project, MCRISolver-v1p0, that contains three python
+		modules and a data file:
+		<ul>
+		  <li>
+		    python classes for discriminating colors: mcricolors_v1p0.py
+		  </li>
+		  <li>
+		    python classes for mapping pieces on a Rubik's Cube: mcrimaps_v1p0.py
+		  </li>
+		  <li>
+		    python classes for solving a Rubik's Cube: mcrisolver_v1p0.py
+		  </li>
+		  <li>
+		    small lookup tables used by mcrisolver_v1p0: mcrimtab1_v1p0.bin
+		  </li>
+		</ul>
+	      </p>
+	      <p>
+		With these components, MindCuber-RI will solve the Rubik's
+		Cube in an average of about 42 moves.
+	      </p>
+	    </li>
+	    <li>
+	      <p>
+		An optional python project, MCRIMTab4-v1p0, that contains
+		a large data file:
+	      </p>
+	      <ul>
+		<li>
+		  large lookup tables for mcrisolver_v1p0: mcrimtab4_v1p0.bin
+		</li>
+	      </ul>
+	      <p>
+		With this large lookup table installed, MindCuber-RI will solve
+		the Rubik's Cube more quickly in an average of about 31 moves.
+	      </p>
+	      <p>
+		NOTE: This program takes a long time (around 30 minutes) to
+		download and install on the Robot Inventor hub so it may be desirable
+		to just use the small tables initially to get MindCuber-RI
+		working.
+	      </p>
+	    </li>
+	    <li>
+	      <p>
+		A python project, MCRIInstall-v1p0, that installs any MindCuber-RI files,
+		from the MCRISolver-v1p0 and MCRIMTab4-v1p0  projects, that have been
+		downladed to other slots on the Robot Inventor hub.
+	      </p>
+	    </li>
+	    <li>
+	      <p>
+		The main python program, MindCuber-RI-v1p0, that uses the modules and
+		data files installed by the previos projects to control the
+		MindCuber-RI mechanism and solve the Rubik's Cube.
+	      </p>
+	    </li>
+	  </ol>
+	</p>
+      </div>
+      <div style="line-height:130%;">
+	<h2><span id="Software">2. Software</span></h2>
+      </div>
+      <div style="line-height:130%;">
+	<span id="Download">
+	  NOTE: to use the <b>Download</b> links below:
+	</span>
+	<ul>
+	  <li>On Windows - right click on the link</li>
+	  <li>
+	    On Mac - click on the link while holding the
+	    control(ctrl) key
+	  </li>
+	</ul>
+	Select one of the following from the pop-up menu:
+	<ul>
+	  <li><b>Save link as...</b></li>
+	  <li><b>Save Target As...</b></li>
+	  <li><b>Download Linked File As...</b></li>
+	</ul>
+	Then choose a folder on your computer in which to save the file.
+      </div>
+      <div style="line-height:130%;">
+	<h3>
+	  <span id="MindCuber-RIProgram">
+	    2.1 Download MindCuber-RI Program
+	  </span>
+	</h3>
+	<ol>
+	  <li>
+	    <p>
+	      Download the file to your computer:
+	    </p>
+	    <p>
+	      <ul>
+		<li>
+		  <a href="MindCuber-RI-v1p0.zip">download MindCuber-RI-v1p0.zip</a>
+		  (set 51515)
+		</li>
+	      </ul>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Extract the files from this archive.
+	    </p>
+	    <p>
+	      On a computer running Windows, find the file in Windows
+	      Explorer, click with the right mouse button and select
+	      <b>Extract all...</b>
+	    </p>
+	    <p>
+	      On a Mac computer, locate the file in the Finder and
+	      double-click on it to extract the contents.
+	    </p>
+	    <p>
+	      This creates a folder, MindCuber-RI-v1p0, containing:
+	      <ul>
+		<li>
+		  MCRISolver-v1p0.lms
+		</li>
+		<li>
+		  MCRIMTab4-v1p0.lms
+		</li>
+		<li>
+		  MCRIInstall-v1p0.lms
+		</li>
+		<li>
+		  MindCuber-RI-v1p0.lms
+		</li>
+	      </ul>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Start the LEGO MINDSTORMS Robot Inventor software and select the
+	      <b>File</b> menu then <b>Open...</b>.
+	    </p>
+	    <img src="openfile.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      Find the MCRISolver-v1p0.lms project file and <b>Open</b> it.
+	    </p>
+	    <img src="mcrisolveropn.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      <b>Connect</b> to the Robot Inventor hub using either a USB cable or
+	      via bluetooth.
+	    </p>
+	    <img src="connect.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      Expand the <b>Console</b> to see progress information about the
+	      software installation during the next step.
+	    </p>
+	    <img src="mcrisolvercons.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      <b>Download and Run</b> the MCRISolver-v1p0 program in an unused
+	      slot, e.g. 19, on the Robot Inventor hub.
+	    </p>
+	    <img src="mcrisolverdld.png" vspace="5"></img>
+	    <p>
+	      NOTE: This program may take up to a minute to download so please
+	      be patient. The LEGO MINDSTORMS Robot Inventor software stops showing
+	      progress after a few seconds even though the download continues.
+	    </p>
+	    <p>
+	      NOTE: Owing to limitations of the current version of the LEGO
+	      MINDSTORMS Robot Inventor software, running this program will result in a python
+	      SyntaxError. This is deliberate and should be ignored.
+	    </p>
+	    <img src="mcrisolverlog.png" vspace="5"></img>
+	    <p>
+	      Once downloaded, the MCRISolver-v1p0 program should be left on the hub
+	      until the installation has been completed in the following steps.
+	    </p>
+	  </li>
+	  <li>
+	    Optionally you may download the MCRIMTab4-v1p0 program to allow MindCuber-RI to
+	    solve the cube more quickly.
+	    See <a href="mindcuberri.html#FasterSolution">Faster Solution</a> for details.
+	  </li>
+	  <li>
+	    <p>
+	      <span id="Install">Select the <b>File</b> menu then <b>Open...</b> as step 3.</span>
+	      Then find the MCRIInstall-v1p0.lms project file and <b>Open</b> it.
+	    </p>
+	    <img src="mcriinstallopn.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      Expand the <b>Console</b> to see progress information about the
+	      software installation during the next step.
+	    </p>
+	    <img src="mcriinstallcons.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      <b>Download and Run</b> the MCRIInstall-v1p0 program in an unused
+	      slot on the Robot Inventor hub. Do not overwrite MCRISolver-v1p0 in slot 19
+	      (or MCRIMTab4-v1p0 in slot 18).
+	    </p>
+	    <img src="mcriinstalldld.png" vspace="5"></img>
+	    <p>
+	      The hub LED display shows progress:
+	      <br></br>
+	      <video width=320 height=240 controls src="mcriinstallhub.mp4"></video>
+	    </p>
+	    <p>
+	      And the console shows download information:
+	    </p>
+	    <img src="mcriinstalllog.png" vspace="5"></img>
+	    <p>
+	      This installs mcricolors_v1p0.py, mcrimaps_v1p0.py, mcrisolver_v1p0.py
+	      and mcrimtab1_v1p0.bin on the hub for use by the main program.
+	    </p>
+	    <p>
+	      The hub will restart when the installation has finished. If the
+	      hub was not connected via a USB cable, it may turn off and be
+	      necessary to turn it back on manually. If the hub was connected via
+	      Bluetooth it may be necessary to re-connect.
+	    </p>
+	    <p>
+	      NOTE: The LEGO MINDSTORMS Robot Inventor software may indicate that
+	      "The hub OS needs to be updated" when it is not necessary.
+	      If this happens, <b>do not press the UPDATE button</b> as this
+	      will delete the programs that have just been installed.
+	      Instead, power off the hub and if the hub is connected via a USB
+	      cable, disconnect the cable.
+	    </p>
+	    <p>
+	      Wait for the "Update hub" dialog to disappear. Then turn the hub
+	      back on and re-connect the USB cable if one was being used.
+	  </li>
+	  <li>
+	    <p>
+	      MCRISolver-v1p0 (optionally MCRIMTab4-v1p0) and MCRIInstall-v1p0 may now be
+	      removed from the hub to free the space and slots for other programs.
+	    </p>
+	    <p>
+	      <b>Open</b> the connection to the Robot Inventor hub.
+	    </p>
+	    <img src="hubconnect.png" vspace="5"></img>
+	    <p>
+	      Then open <b>Programs</b> the view all the programs on the hub.
+	    </p>
+	    <img src="manage.png" vspace="5"></img>
+	    <p>
+	      If necessary, scroll down to see all slots. Then delete the programs
+	      used in previous steps.
+	    </p>
+	    <img src="delete.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      Select the <b>File</b> menu then <b>Open...</b> as step 3. Then
+	      find the MindCuber-RI-v1p0.lms project file and <b>Open</b> it.
+	    </p>
+	    <img src="mindcuberriopn.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      <b>Download and Run</b> the MindCuber-RI-v1p0 program in an unused slot
+	      on the Robot Inventor hub.
+	    </p>
+	    <img src="mindcuberridld.png" vspace="5"></img>
+	  </li>
+	</ol>
+	<p>
+	  MindCuber-RI is now ready to solve a Rubik's Cube!
+	</p>
+      </div>
+      <div style="line-height:130%;">
+	<h2><span id="Operation">3. Operation</span></h2>
+	<ol>
+	  <li>
+	    <p>
+	      Run the MindCuber-RI program, if it is not already running, using the buttons
+	      on the MINDSTORMS Robot Inventor hub. Press the <b>right</b> button to select the slot number
+	      to which the program was downloaded. Then press the <b>center</b> button to
+	      run the program.
+	      <br></br>
+	      <video width=320 height=180 controls src="mindcuberrihub.mp4"></video>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      <span id="AlignTurntable">Gently use your finger to rotate</span>
+	      the turntable in each direction to determine if it is aligned. It moves
+	      slightly because of "play" in the gears connecting it to the motor.
+	      There should be an equal amount of movement in each direction.
+	      If necessary, use the <b>left</b> and <b>right</b> buttons on the hub to
+	      adjust the position of the motor position. Each press nudges the motor by
+	      a small angle.
+	      <br></br>
+	      <video width=320 height=180 controls src="mcrialign.mp4"></video>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Insert a scrambled Rubik's Cube into the turntable tray and
+	      MindCuber-RI will start to scan and solve the cube.
+	      <br></br>
+	      <video width=320 height=180 controls src="mindcuberrislv.mp4"></video>
+	    </p>
+	    <p>
+	      MindCuber-RI may scan the cube up to three times if it is unable to
+	      determine the colors at first. If the scanned colors do not
+	      result in a valid pattern, MindCuber-RI will stop after the third
+	      attempt with the <b>middle</b> buttont colored orange.
+	      If this happens, there may be a number of possible causes.
+	      See the
+	      <a href="mindcuberri.html#Scanning">troubleshooting section</a>.
+	    </p>
+	  </li>
+	</ol>
+      </div>
+      <div style="line-height:130%;">
+	<h2><span id="FasterSolution">4. Faster Solution</span></h2>
+	<p>
+	  The method used to calculate a solution for the cube is based on some
+	  pre-calculated lookup tables containintg sequences of moves that solve
+	  groups of pieces in stages. The default, small tables included in
+	  the MCRISolver-v1p0 download result in solutions averaging about 42
+	  moves. By using a larger set of lookup tables with more entries,
+	  shorter solutions can be caltulated with an average only about 31
+	  moves. With fewer moves, the overall time to solve the cube is reduced.
+	  These large tables are contained in the MCRIMTab4-v1p0.lms project
+	  and can be downloaded in the same way as those in MCRISolver-v1p0.
+	</p>
+	<ol>
+	  <li>
+	    <p>
+	      Select the <b>File</b> menu then <b>Open...</b> as before. Then
+	      find the MCRIMTab4-v1p0.lms project file and <b>Open</b> it.
+	    </p>
+	    <img src="mcrimtab4opn.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      Expand the <b>Console</b> to see progress information about the
+	      software installation during the next step.
+	    </p>
+	    <img src="mcrimtab4cons.png" vspace="5"></img>
+	  </li>
+	  <li>
+	    <p>
+	      <b>Download and Run</b> the MCRIMTab4-v1p0 program in an unused
+	      slot, e.g. 18, on the Robot Inventor hub.
+	    </p>
+	    <img src="mcrimtab4dld.png" vspace="5"></img>
+	    <p>
+	      NOTE: This large program will take a long time (around 30 minutes) to
+	      download so please be patient. The LEGO MINDSTORMS Robot Inventor software
+	      stops showing progress after a few seconds even though the download
+	      continues.
+	    </p>
+	    <p>
+	      If the connection to the hub is via Bluetooth then please attach the
+	      hub to a USB charger to ensure it does not time out and shutdown during
+	      the download.
+	    </p>
+	    <p>
+	      A message will appear in the <b>Console</b> when the download
+	      is complete.
+	    </p>
+	    <p>
+	      NOTE: Owing to limitations of the current version of the LEGO MINDSTORMS
+	      Robot Inventor software, running this program will result in a python
+	      SyntaxError. This is deliberate and should be ignored.
+	    </p>
+	    <img src="mcrimtab4log.png" vspace="5"></img>
+	    <p>
+	      Once downloaded, the MCRIMTab4-v1p0 program should be left on the hub
+	      until the installation has been completed.
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Continue, or repeat from
+	      <a href="mindcuberri.html#Install">2.1 Download MindCuber-RI Program, step 9</a>
+	      to complete the installation.
+	    </p>
+	  </li>
+	</ol>
+      </div>
+      <div style="line-height:130%;">
+	<h2><span id="Troubleshooting">5. Troubleshooting Tips</span></h2>
+	<h3>
+	  <span id="General">
+	    5.1 General
+	  </span>
+	</h3>
+	<p>
+	  <i>Under development...</i>
+	</p>
+	<p>
+	  Please post a comment or message on the <a href="https://www.facebook.com/lego.mindcuber">MindCuber Facebook page</a> for help.
+	</p>
+	<h3>
+	  <span id="Tilting">
+	    5.2 Tilting
+	  </span>
+	</h3>
+	<p>
+	  <i>Under development...</i>
+	</p>
+	<h3>
+	  <span id="Scanning">
+	    5.3 Scanning
+	  </span>
+	</h3>
+	<p>
+	  <i>Under development...</i>
+	</p>
+      </div>
+      <div style="clear:both">
+	<br></br>
+	<p>
+	  Like MindCuber on
+	  <a href="https://www.facebook.com/lego.mindcuber">Facebook</a>
+	  to share your experiences and help each other with troubleshooting.
+	</p>
+      </div>
+      <div style="clear:both;text-align:center;">
+	<p>&nbsp</p>
+	<p>See more LEGO robot Rubik's Cube solvers at
+	  <br></br>
+	  <a href="http://youtube.com/user/RoboticSolutions/videos?sort=p&view=0">youtube.com/RoboticSolutions</a>
+	  and
+	  <a href="http://youtube.com/user/IAssemble/videos?sort=p&view=0">youtube.com/IAssemble</a>
+	</p>
+	<span style="font-size: x-small">
+	  <p>Copyright &copy; 2013-2021 Mike Dobson and David Gilday</p>
+	  <p>
+	    LEGO and MINDSTORMS are trademarks of the LEGO Group<br />
+	    Rubik's Cube is a trademark of Rubiks Brand Limited
+	  </p>
+	  Disclaimer: thoughts and opinions expressed here are my own
+	</span>
+      </div>
+    </font>
+  </body>
+</html>
